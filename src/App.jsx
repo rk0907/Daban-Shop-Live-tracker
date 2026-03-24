@@ -106,7 +106,7 @@ const can = (role, action) => PERMS[role]?.includes(action);
 const USERS_DB = [
   {
     id: 1,
-    name: 'Kobina Praobeng',          // Store owner / admin
+    name: 'Kobina Pra-Obeng',          // Store owner / admin
     email: 'kobinapraobeng@gmail.com',
     role: 'Admin',
     password: 'admin2026',
