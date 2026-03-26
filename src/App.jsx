@@ -1196,8 +1196,8 @@ const ReportsPage = ({ transactions }) => {
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const monthly = months.map((m, i) => {
     const mo  = String(i + 1).padStart(2, '0');
-    const inc = sales.filter(t => t.date?.startsWith(`2025-${mo}`)).reduce((s, t) => s + t.amount, 0);
-    const exp = expenses.filter(t => t.date?.startsWith(`2025-${mo}`)).reduce((s, t) => s + t.amount, 0);
+    const inc = sales.filter(t => t.date?.startsWith(`2026-${mo}`)).reduce((s, t) => s + t.amount, 0);
+    const exp = expenses.filter(t => t.date?.startsWith(`2026-${mo}`)).reduce((s, t) => s + t.amount, 0);
     return { month: m, revenue: inc, expenses: exp, profit: inc - exp };
   });
 
@@ -1215,7 +1215,7 @@ const ReportsPage = ({ transactions }) => {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-stone-900">Financial Reports</h1>
-        <p className="text-stone-400 text-sm">2025 Annual Summary — Daban Clothing & Apparel</p>
+        <p className="text-stone-400 text-sm">2026 Annual Summary — Daban Clothing & Apparel</p>
       </div>
 
       {/* Summary KPIs */}
@@ -1236,7 +1236,7 @@ const ReportsPage = ({ transactions }) => {
       {/* Monthly chart */}
       <Card className="p-6">
         <div className="flex items-center justify-between mb-4">
-          <h3 className="font-semibold text-stone-900">Monthly Revenue vs Expenses 2025</h3>
+          <h3 className="font-semibold text-stone-900">Monthly Revenue vs Expenses 2026</h3>
           <Btn variant="outline" size="sm" onClick={() => exportCSV(
             [['Month','Revenue','Expenses','Profit'], ...monthly.map(m => [m.month, m.revenue, m.expenses, m.profit])],
             'daban-monthly.csv'
