@@ -510,8 +510,8 @@ const Dashboard = ({ transactions, user }) => {
   const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const monthly = months.map((m, i) => {
     const mo  = String(i + 1).padStart(2, '0');
-    const inc = sales.filter(t => t.date?.startsWith(`2025-${mo}`)).reduce((s, t) => s + t.amount, 0);
-    const exp = expenses.filter(t => t.date?.startsWith(`2025-${mo}`)).reduce((s, t) => s + t.amount, 0);
+    const inc = sales.filter(t => t.date?.startsWith(`2026-${mo}`)).reduce((s, t) => s + t.amount, 0);
+    const exp = expenses.filter(t => t.date?.startsWith(`2026-${mo}`)).reduce((s, t) => s + t.amount, 0);
     return { month: m, revenue: inc, expenses: exp, profit: inc - exp };
   });
 
@@ -585,7 +585,7 @@ const Dashboard = ({ transactions, user }) => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Revenue vs Expenses bar chart */}
         <Card className="lg:col-span-2 p-6">
-          <h3 className="font-semibold text-stone-900 mb-4">Revenue vs Expenses — 2025</h3>
+          <h3 className="font-semibold text-stone-900 mb-4">Revenue vs Expenses — 2026</h3>
           <ResponsiveContainer width="100%" height={210}>
             <BarChart data={monthly} barSize={14} barGap={3}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f5f5f4" vertical={false} />
